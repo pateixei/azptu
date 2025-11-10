@@ -3,6 +3,8 @@
 ![Azure AI Foundry](https://img.shields.io/badge/Azure-AI%20Foundry-blue)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-green)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![GitHub](https://img.shields.io/badge/GitHub-pateixei%2Fazptu-black)
 
 Uma ferramenta de linha de comando para gerenciar **Provisioned Throughput Units (PTU)** no Azure AI Foundry com validação automática, estado persistente implementada usando o Azure Python SDK.
 
@@ -12,14 +14,23 @@ Execute diretamente como: `azptu <comando> [opções]`
 
 ### 1. Instalação Rápida
 
+**Opção A: Clone do GitHub (Recomendado)**
 ```bash
-# Clone ou baixe os arquivos
-git clone <repositório> ou baixe os arquivos
+# Clone o repositório
+git clone https://github.com/pateixei/azptu.git
+cd azptu
 
 # Instalar dependências
 pip install -r requirements.txt
 
 # Autenticar no Azure
+az login
+```
+
+**Opção B: Download Manual**
+```bash
+# Baixe os arquivos do repositório e execute:
+pip install -r requirements.txt
 az login
 ```
 
