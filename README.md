@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/Python-3.8%2B-green)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
 
-Uma ferramenta de linha de comando para gerenciar **Provisioned Throughput Units (PTU)** no Azure AI Foundry com validação automática, estado persistente e suporte completo ao Azure Python SDK.
+Uma ferramenta de linha de comando para gerenciar **Provisioned Throughput Units (PTU)** no Azure AI Foundry com validação automática, estado persistente implementada usando o Azure Python SDK.
 
 Execute diretamente como: `azptu <comando> [opções]`
 
@@ -50,7 +50,7 @@ azptu create-ptu-deployment \
   --deployment-type regional
 ```
 
-## 📁 Arquivos da Versão Consolidada
+## 📁 Arquivos da Versão 
 
 ```
 📦 azptu-cli/
@@ -137,14 +137,14 @@ version              # Informações da versão
 
 ```bash
 # 1. Configuração inicial
-python ai_foundry_ptu_cli_consolidated.py set-resource-group "rg-production"
-python ai_foundry_ptu_cli_consolidated.py set-subscription "sua-subscription-id"
+python azptu.py set-resource-group "rg-production"
+python azptu.py set-subscription "sua-subscription-id"
 
 # 2. Verificar modelos disponíveis  
-python ai_foundry_ptu_cli_consolidated.py list-ptu-models
+python azptu.py list-ptu-models
 
 # 3. Criar deployment regional GPT-4o (100 PTU)
-python ai_foundry_ptu_cli_consolidated.py create-ptu-deployment \
+python azptu.py create-ptu-deployment \
   --account-name "ai-foundry-prod" \
   --deployment-name "gpt4o-api" \
   --model-name "gpt-4o" \
@@ -152,12 +152,12 @@ python ai_foundry_ptu_cli_consolidated.py create-ptu-deployment \
   --capacity 100
 
 # 4. Verificar deployment criado
-python ai_foundry_ptu_cli_consolidated.py get-ptu-info \
+python azptu.py get-ptu-info \
   --account-name "ai-foundry-prod" \
   --deployment-name "gpt4o-api"
 
 # 5. Escalar para 200 PTU
-python ai_foundry_ptu_cli_consolidated.py update-ptu-capacity \
+python azptu.py update-ptu-capacity \
   --account-name "ai-foundry-prod" \
   --deployment-name "gpt4o-api" \
   --new-capacity 200
@@ -167,17 +167,17 @@ python ai_foundry_ptu_cli_consolidated.py update-ptu-capacity \
 
 ```bash
 # GPT-4o para produção (Regional)
-python ai_foundry_ptu_cli_consolidated.py create-ptu-deployment \
+python azptu.py create-ptu-deployment \
   --account-name "ai-foundry" --deployment-name "gpt4o-prod" \
   --model-name "gpt-4o" --model-version "2024-08-06" --capacity 150
 
 # GPT-4o Mini para desenvolvimento (Regional)  
-python ai_foundry_ptu_cli_consolidated.py create-ptu-deployment \
+python azptu.py create-ptu-deployment \
   --account-name "ai-foundry" --deployment-name "gpt4o-mini-dev" \
   --model-name "gpt-4o-mini" --model-version "2024-07-18" --capacity 50
 
 # DeepSeek R1 para pesquisa (Global)
-python ai_foundry_ptu_cli_consolidated.py create-ptu-deployment \
+python azptu.py create-ptu-deployment \
   --account-name "ai-foundry" --deployment-name "deepseek-research" \
   --model-name "deepseek-r1" --model-version "2025-01-20" \
   --capacity 200 --deployment-type global
@@ -295,7 +295,7 @@ az account set --subscription "sua-subscription-id"
 ```bash
 # Problema: Capacidade inválida
 # Solução: Verificar requisitos
-python ai_foundry_ptu_cli_consolidated.py list-ptu-models
+python azptu.py list-ptu-models
 ```
 
 ## 📊 Monitoramento e Custos
@@ -304,7 +304,7 @@ python ai_foundry_ptu_cli_consolidated.py list-ptu-models
 
 ```bash
 # Informações detalhadas do deployment
-python ai_foundry_ptu_cli_consolidated.py get-ptu-info \
+python azptu.py get-ptu-info \
   --account-name "ai-foundry" \
   --deployment-name "gpt4o-prod"
 
@@ -336,7 +336,7 @@ python ai_foundry_ptu_cli_consolidated.py get-ptu-info \
 ### Data Zone PTU (Compliance)
 ```bash
 # Para maior isolamento de dados
-python ai_foundry_ptu_cli_consolidated.py create-ptu-deployment \
+python azptu.py create-ptu-deployment \
   --deployment-type data-zone \
   --model-name "gpt-4o" \
   --capacity 100
@@ -383,7 +383,7 @@ python ai_foundry_ptu_cli_consolidated.py create-ptu-deployment \
 # deploy-ptu-environment.sh
 
 # Produção
-python ai_foundry_ptu_cli_consolidated.py create-ptu-deployment \
+python azptu.py create-ptu-deployment \
   --account-name "ai-foundry-prod" \
   --deployment-name "gpt4o-prod-v1" \
   --model-name "gpt-4o" \
@@ -392,7 +392,7 @@ python ai_foundry_ptu_cli_consolidated.py create-ptu-deployment \
   --deployment-type regional
 
 # Staging  
-python ai_foundry_ptu_cli_consolidated.py create-ptu-deployment \
+python azptu.py create-ptu-deployment \
   --account-name "ai-foundry-staging" \
   --deployment-name "gpt4o-staging-v1" \
   --model-name "gpt-4o" \
@@ -407,7 +407,7 @@ echo "✅ Ambiente PTU implantado com sucesso!"
 
 ```bash
 # Backup da configuração atual
-python ai_foundry_ptu_cli_consolidated.py show-config > config-backup.txt
+python azptu.py show-config > config-backup.txt
 
 # Backup de deployments (manual via Portal Azure ou az CLI)
 az cognitiveservices account deployment list \
