@@ -462,9 +462,9 @@ logging.basicConfig(level=logging.DEBUG)
 
 ## 📄 Licença
 
-Este projeto é fornecido como exemplo educacional. Consulte a documentação oficial da Microsoft para uso em produção.
+Este projeto é fornecido como exemplo "as is" e sem nenhuma garantia. Consulte a documentação oficial da Microsoft para uso em produção.
 
-**Versão**: 1.0.0 Consolidated  
-**Última Atualização**: Janeiro 2025  
-**Testado**: Azure Subscription real (fad729f9-287d-4b9d-baa0-ee7a900f3f93)  
+**Versão**: 0.9.0 
+**Última Atualização**: Outubro 2025  
+**Testado**: Azure Subscription 
 **Status**: ✅ Production Ready com validação real
