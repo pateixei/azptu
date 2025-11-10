@@ -1,0 +1,309 @@
+{
+  "version": "0.9.0",
+  "description": "azptu - Azure PTU CLI",
+  
+  "ptu_requirements": {
+    "gpt-4o": {
+      "regional_min": 50,
+      "regional_increment": 50,
+      "global_min": 100,
+      "global_increment": 100
+    },
+    "gpt-4o-mini": {
+      "regional_min": 25,
+      "regional_increment": 25,
+      "global_min": 50,
+      "global_increment": 50
+    },
+    "gpt-4-turbo": {
+      "regional_min": 50,
+      "regional_increment": 50,
+      "global_min": 100,
+      "global_increment": 100
+    },
+    "gpt-4": {
+      "regional_min": null,
+      "regional_increment": null,
+      "global_min": 300,
+      "global_increment": 50
+    },
+    "gpt-35-turbo": {
+      "regional_min": 25,
+      "regional_increment": 25,
+      "global_min": 100,
+      "global_increment": 100
+    },
+    "gpt-3.5-turbo": {
+      "regional_min": 25,
+      "regional_increment": 25,
+      "global_min": 100,
+      "global_increment": 100
+    },
+    "text-embedding-3-large": {
+      "regional_min": 100,
+      "regional_increment": 100,
+      "global_min": 150,
+      "global_increment": 50
+    },
+    "text-embedding-3-small": {
+      "regional_min": 100,
+      "regional_increment": 100,
+      "global_min": 150,
+      "global_increment": 50
+    },
+    "text-embedding-ada-002": {
+      "regional_min": 100,
+      "regional_increment": 100,
+      "global_min": 150,
+      "global_increment": 50
+    },
+    "dall-e-3": {
+      "regional_min": 10,
+      "regional_increment": 10,
+      "global_min": 25,
+      "global_increment": 5
+    },
+    "whisper": {
+      "regional_min": 10,
+      "regional_increment": 10,
+      "global_min": 25,
+      "global_increment": 5
+    },
+    "tts": {
+      "regional_min": 10,
+      "regional_increment": 10,
+      "global_min": 25,
+      "global_increment": 5
+    },
+    "tts-hd": {
+      "regional_min": 10,
+      "regional_increment": 10,
+      "global_min": 25,
+      "global_increment": 5
+    },
+    "deepseek-r1": {
+      "regional_min": 100,
+      "regional_increment": 100,
+      "global_min": 200,
+      "global_increment": 100
+    },
+    "deepseek-v3": {
+      "regional_min": 50,
+      "regional_increment": 50,
+      "global_min": 100,
+      "global_increment": 100
+    },
+    "o1-preview": {
+      "regional_min": null,
+      "regional_increment": null,
+      "global_min": 1000,
+      "global_increment": 100
+    },
+    "o1-mini": {
+      "regional_min": null,
+      "regional_increment": null,
+      "global_min": 200,
+      "global_increment": 50
+    },
+    "o3-mini": {
+      "regional_min": null,
+      "regional_increment": null,
+      "global_min": 500,
+      "global_increment": 100
+    }
+  },
+  
+  "ptu_models": {
+    "models": [
+      {
+        "name": "gpt-4o",
+        "description": "GPT-4 Omni - Modelo multimodal avancado",
+        "provider": "OpenAI",
+        "versions": ["2024-08-06", "2024-11-20", "2024-05-13"],
+        "supported_regions": ["US East", "US West", "Europe West", "Australia East"]
+      },
+      {
+        "name": "gpt-4o-mini",
+        "description": "GPT-4 Omni Mini - Versao mais eficiente e rapida",
+        "provider": "OpenAI",
+        "versions": ["2024-07-18", "2024-08-06"],
+        "supported_regions": ["US East", "US West", "Europe West", "Australia East"]
+      },
+      {
+        "name": "gpt-4-turbo",
+        "description": "GPT-4 Turbo - Modelo de alta performance com janela de contexto estendida",
+        "provider": "OpenAI",
+        "versions": ["2024-04-09", "turbo-2024-04-09"],
+        "supported_regions": ["US East", "US West", "Europe West"]
+      },
+      {
+        "name": "gpt-4",
+        "description": "GPT-4 - Modelo original de alta qualidade",
+        "provider": "OpenAI",
+        "versions": ["0613", "1106-preview"],
+        "supported_regions": ["Global PTU apenas"]
+      },
+      {
+        "name": "gpt-35-turbo",
+        "description": "GPT-3.5 Turbo - Modelo rapido e eficiente",
+        "provider": "OpenAI",
+        "versions": ["0613", "1106", "0125"],
+        "supported_regions": ["US East", "US West", "Europe West", "Australia East"]
+      },
+      {
+        "name": "text-embedding-3-large",
+        "description": "Embeddings de alta dimensionalidade para busca semantica",
+        "provider": "OpenAI",
+        "versions": ["3-large"],
+        "supported_regions": ["US East", "US West", "Europe West"]
+      },
+      {
+        "name": "text-embedding-3-small",
+        "description": "Embeddings compactos para busca semantica",
+        "provider": "OpenAI",
+        "versions": ["3-small"],
+        "supported_regions": ["US East", "US West", "Europe West"]
+      },
+      {
+        "name": "text-embedding-ada-002",
+        "description": "Embeddings ada-002 (legado)",
+        "provider": "OpenAI",
+        "versions": ["2"],
+        "supported_regions": ["US East", "US West", "Europe West"]
+      },
+      {
+        "name": "dall-e-3",
+        "description": "DALL-E 3 - Geracao de imagens de alta qualidade",
+        "provider": "OpenAI",
+        "versions": ["3.0"],
+        "supported_regions": ["US East", "Europe West"]
+      },
+      {
+        "name": "whisper",
+        "description": "Whisper - Reconhecimento de fala automatico",
+        "provider": "OpenAI",
+        "versions": ["001"],
+        "supported_regions": ["US East", "Europe West"]
+      },
+      {
+        "name": "deepseek-r1",
+        "description": "DeepSeek R1 - Modelo de raciocinio avancado",
+        "provider": "DeepSeek",
+        "versions": ["2025-01-20"],
+        "supported_regions": ["US East"]
+      },
+      {
+        "name": "deepseek-v3",
+        "description": "DeepSeek V3 - Modelo conversacional avancado",
+        "provider": "DeepSeek",
+        "versions": ["2024-12-19"],
+        "supported_regions": ["US East", "Europe West"]
+      },
+      {
+        "name": "o1-preview",
+        "description": "OpenAI o1-preview - Modelo de raciocinio complexo",
+        "provider": "OpenAI",
+        "versions": ["2024-09-12"],
+        "supported_regions": ["Global PTU apenas"]
+      },
+      {
+        "name": "o1-mini",
+        "description": "OpenAI o1-mini - Versao eficiente do modelo de raciocinio",
+        "provider": "OpenAI",
+        "versions": ["2024-09-12"],
+        "supported_regions": ["Global PTU apenas"]
+      }
+    ]
+  },
+  
+  "messages": {
+    "errors": {
+      "model_not_support_regional": "Modelo '{model_name}' nao suporta deployment Regional. Use Global ou Data Zone.",
+      "min_capacity_error": "Capacidade insuficiente para {model_name} ({type_name}): minimo {min_capacity}, fornecido {capacity}",
+      "increment_error": "Capacidade {capacity} PTU invalida para {model_name} ({type_name}). Use incrementos de {increment}",
+      "location_required": "Parametro --location e obrigatorio para deployment tipo '{deployment_type}'",
+      "invalid_location": "Location '{location}' nao e valida para deployment tipo '{deployment_type}'. Use: {valid_locations}",
+      "capacity_invalid": "Capacidade deve ser um número positivo",
+      "no_resource_group": "Resource group nao especificado e nenhum valor padrao encontrado no estado. Use --resource-group ou 'set-resource-group <nome>'",
+      "no_subscription": "Subscription nao especificada e nenhum valor padrao encontrado no estado. Use --subscription-id ou 'set-subscription <id>'",
+      "auth_failed": "Falha na autenticação Azure. Faça login com: az login",
+      "project_not_found": "Projeto '{project_name}' não encontrado",
+      "deployment_not_found": "Deployment '{deployment_name}' não encontrado",
+      "quota_insufficient": "Quota insuficiente para esta capacidade PTU",
+      "region_capacity_unavailable": "Capacidade PTU não disponível na região especificada"
+    },
+    "warnings": {
+      "no_stored_values": "Nenhum valor padrão armazenado",
+      "state_expired": "Estado expirado, valores limpos",
+      "cache_miss": "Cache não encontrada, buscando dados atualizados",
+      "using_defaults": "Usando valores padrão do estado persistente"
+    },
+    "info": {
+      "state_info": "Estado Persistente Atual",
+      "stored_resource_group": "Resource Group: {resource_group}",
+      "stored_subscription": "Subscription: {subscription}",
+      "no_stored_values": "Nenhum valor padrão armazenado",
+      "deployment_creating": "Criando deployment '{deployment_name}' com {capacity} PTUs...",
+      "deployment_updating": "Atualizando capacidade do deployment '{deployment_name}'...",
+      "deployment_deleting": "Deletando deployment '{deployment_name}'...",
+      "operation_completed": "Operação concluída com sucesso",
+      "using_cached_data": "Usando dados em cache (atualizados recentemente)",
+      "fetching_fresh_data": "Buscando dados atualizados do Azure"
+    },
+    "success": {
+      "project_set": "Projeto definido como padrão: {project_name}",
+      "resource_group_set": "Resource Group definido: {resource_group}",
+      "subscription_set": "Subscription definido: {subscription}",
+      "deployment_created": "Deployment '{deployment_name}' criado com sucesso",
+      "deployment_updated": "Deployment '{deployment_name}' atualizado com sucesso",
+      "deployment_deleted": "Deployment '{deployment_name}' deletado com sucesso",
+      "state_cleared": "Estado limpo com sucesso"
+    },
+    "labels": {
+      "current_project": "Projeto atual",
+      "available_projects": "Projetos disponíveis",
+      "deployment_info": "Informações do Deployment",
+      "model_requirements": "Requisitos do Modelo",
+      "capacity_validation": "Validação de Capacidade",
+      "ptu_models": "Modelos PTU Disponíveis"
+    }
+  },
+  
+  "deployment_types": {
+    "regional": {
+      "description": "Deployment regional - capacidade dedicada em uma região específica",
+      "sku_name": "ProvisionedManaged",
+      "requires_location": true,
+      "valid_locations": [
+        "eastus", "eastus2", "westus", "westus2", "westus3", "centralus", "southcentralus",
+        "northcentralus", "westcentralus", "canadacentral", "canadaeast", "brazilsouth",
+        "uksouth", "ukwest", "westeurope", "northeurope", "francecentral", "germanynortheast",
+        "switzerlandnorth", "norwayeast", "eastasia", "southeastasia", "japaneast", 
+        "japanwest", "australiaeast", "australiasoutheast", "centralindia", "southindia",
+        "koreacentral", "koreasouth", "uaenorth", "southafricanorth"
+      ]
+    },
+    "global": {
+      "description": "Deployment global - capacidade compartilhada globalmente",
+      "sku_name": "GlobalProvisionedManaged",
+      "requires_location": false,
+      "valid_locations": ["global"]
+    },
+    "data-zone": {
+      "description": "Deployment data zone - capacidade dedicada com isolamento de dados",
+      "sku_name": "DataZoneProvisionedManaged", 
+      "requires_location": true,
+      "valid_locations": [
+        "eastus", "westus2", "westeurope", "southeastasia", "japaneast", "australiaeast"
+      ]
+    }
+  },
+  
+  "settings": {
+    "state_expiration_minutes": 5,
+    "cache_expiration_minutes": 10,
+    "default_timeout_seconds": 30,
+    "retry_attempts": 3,
+    "retry_delay_seconds": 2
+  }
+}
